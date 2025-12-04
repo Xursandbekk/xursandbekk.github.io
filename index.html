@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="uz">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>meni saytim </title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg-1: linear-gradient(135deg,#ffecd2 0%, #fcb69f 50%, #ffd1ff 100%);
+      --accent-1: #ff6b6b;
+      --accent-2: #ffd93d;
+      --accent-3: #7ee7c6;
+      --glass: rgba(255,255,255,0.35);
+      --card-shadow: 0 10px 30px rgba(16,24,40,0.12);
+      --font: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:var(--font);
+      background: var(--bg-1);
+      -webkit-font-smoothing:antialiased;
+      color:#082032;
+      line-height:1.4;
+      padding:32px;
+    }
+    .wrap{max-width:1100px;margin:0 auto}
+
+    header{display:flex;align-items:center;justify-content:space-between;margin-bottom:28px}
+    .logo{display:flex;align-items:center;gap:12px}
+    .logo .mark{width:48px;height:48px;border-radius:12px;background:conic-gradient(from 180deg at 50% 50%,var(--accent-1),var(--accent-2),var(--accent-3));box-shadow:0 6px 18px rgba(0,0,0,0.12);display:flex;align-items:center;justify-content:center;color:white;font-weight:800}
+    nav ul{list-style:none;padding:0;margin:0;display:flex;gap:18px}
+    nav a{color:rgba(8,32,50,0.9);text-decoration:none;font-weight:600}
+    .cta{background:rgba(8,32,50,0.95);color:white;padding:10px 14px;border-radius:12px;text-decoration:none;font-weight:700}
+
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center;margin-bottom:36px}
+    .card{background:linear-gradient(180deg,rgba(255,255,255,0.6),rgba(255,255,255,0.45));backdrop-filter:blur(8px);padding:28px;border-radius:18px;box-shadow:var(--card-shadow)}
+    .hero h1{font-size:34px;margin:0 0 10px}
+    .hero p{margin:0 0 18px;color:rgba(8,32,50,0.8)}
+    .buttons{display:flex;gap:12px}
+    .btn{padding:10px 14px;border-radius:12px;border:none;cursor:pointer;font-weight:700}
+    .btn-primary{background:linear-gradient(90deg,var(--accent-1),#ff8a65);color:white}
+    .btn-ghost{background:transparent;border:2px solid rgba(8,32,50,0.08)}
+
+    .stats{display:flex;gap:12px;margin-top:12px}
+    .stat{flex:1;padding:12px;border-radius:12px;background:rgba(255,255,255,0.25);text-align:center}
+    .stat strong{display:block;font-size:18px}
+
+    .preview{height:320px;border-radius:12px;overflow:hidden;display:flex;align-items:center;justify-content:center;background:linear-gradient(180deg,#fff 0%,rgba(255,255,255,0.7) 60%);}
+    .preview .screen{width:84%;height:86%;border-radius:12px;background:linear-gradient(180deg,#ffffff, #fffae6);box-shadow:inset 0 1px 0 rgba(255,255,255,0.6)}
+
+    .services{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-bottom:32px}
+    .service{padding:18px;border-radius:14px;background:linear-gradient(180deg,rgba(255,255,255,0.85),rgba(255,255,255,0.75));box-shadow:var(--card-shadow);transition:transform .28s ease,box-shadow .28s ease}
+    .service:hover{transform:translateY(-8px);box-shadow:0 20px 40px rgba(12,20,40,0.12)}
+    .service h3{margin:8px 0 6px}
+    .pill{display:inline-block;padding:6px 10px;border-radius:999px;background:rgba(8,32,50,0.06);font-weight:700}
+
+    .portfolio{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:32px}
+    .item{height:160px;border-radius:12px;display:flex;align-items:flex-end;padding:12px;color:white;font-weight:700;background-size:cover;background-position:center;position:relative;overflow:hidden}
+    .item::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent,rgba(0,0,0,0.28));}
+    .item span{position:relative;z-index:2}
+
+    .contact-row{display:flex;gap:18px}
+    form{flex:1;display:flex;flex-direction:column;gap:12px}
+    input,textarea{padding:12px;border-radius:10px;border:1px solid rgba(8,32,50,0.06);resize:vertical}
+    .contact-info{width:300px;padding:18px;border-radius:12px;background:rgba(255,255,255,0.35)}
+
+    footer{margin-top:26px;text-align:center;color:rgba(8,32,50,0.6)}
+
+    @media (max-width:980px){
+      .hero{grid-template-columns:1fr}
+      .services,.portfolio{grid-template-columns:repeat(2,1fr)}
+      .contact-row{flex-direction:column}
+      .contact-info{width:100%}
+    }
+    @media (max-width:560px){
+      .services,.portfolio{grid-template-columns:1fr}
+      body{padding:18px}
+      .hero h1{font-size:26px}
+    }
+
+    .sparkle{position:absolute;right:-60px;top:-40px;width:220px;height:220px;opacity:0.12;filter:blur(18px);transform:rotate(25deg)}
+    @keyframes floaty{0%{transform:translateY(0)}50%{transform:translateY(-8px)}100%{transform:translateY(0)}}
+    .float{animation:floaty 6s ease-in-out infinite}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="logo">
+        <div class="mark">YS</div>
+        <div>
+          <div style="font-weight:800">Yorqin Sayt</div>
+          <div style="font-size:12px;color:rgba(8,32,50,0.6)">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quae consectetur id similique, ipsa libero quis totam necessitatibus repudiandae quod. Error reiciendis deserunt autem exercitationem quae, quaerat perspiciatis quidem ratione saepe?</div>
+        </div>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#">Bosh sahifa</a></li>
+          <li><a href="#services">Xizmatlar</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#contact">Aloqa</a></li>
+          <li><a class="cta" href="#contact">Buyurtma berish</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="card">
+        <h1>men negrman</h1>
+        <p>uyam negr</p>
+        <div class="buttons">
+          <button class="btn btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Buyurtma berish</button>
+          <button class="btn btn-ghost" onclick="alert('Portfolio bo\'limiga qarang — namunalar quyida!')">Namunalarga qarash</button>
+        </div>
+        <div class="stats">
+          <div class="stat"><strong>120+</strong> Loyihalar</div>
+          <div class="stat"><strong>4.9</strong> O'rtacha baho</div>
+          <div class="stat"><strong>24/7</strong> Qo'llab-quvvatlash</div>
+        </div>
+      </div>
+
+      <div class="preview card">
+        <svg class="sparkle float" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="g1" x1="0" x2="1"><stop offset="0" stop-color="#ffecd2"/><stop offset="1" stop-color="#ffd1ff"/></linearGradient></defs><rect width="200" height="200" rx="24" fill="url(#g1)"/></svg>
+        <div class="screen">
+          <div style="padding:18px">
+            <div style="height:12px;width:40%;background:rgba(8,32,50,0.08);border-radius:6px;margin-bottom:12px"></div>
+            <div style="height:10px;width:30%;background:rgba(8,32,50,0.06);border-radius:6px;margin-bottom:16px"></div>
+            <div style="display:flex;gap:12px">
+              <div style="flex:1;height:80px;background:linear-gradient(90deg,#fff,rgba(255,255,255,0.9));border-radius:10px"></div>
+              <div style="flex:1;height:80px;background:linear-gradient(90deg,#fff,rgba(255,250,230,0.9));border-radius:10px"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services">
+      <h2 style="margin-bottom:12px">Xizmatlarimiz</h2>
+      <div class="services">
+        <div class="service card">
+          <div class="pill">Veb-dizayn</div>
+          <h3>Yorqin & Foydalanuvchi uchun</h3>
+          <p>Brend ranglaringizni hisobga olgan holda zamonaviy interfeyslar yaratamiz.</p>
+        </div>
+        <div class="service card">
+          <div class="pill">Front-end</div>
+          <h3>Tez va Responsiv</h3>
+          <p>HTML, CSS va JavaScript yordamida tez ishlovchi saytlar.</p>
+        </div>
+        <div class="service card">
+          <div class="pill"></div>
+          <h3>Kirishlarni oshirish (nakrutka)</h3>
+          <p>Saytingizni qidiruv tizimlariga moslashtiramiz va o'lchaymiz.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="portfolio">
+      <h2 style="margin-bottom:12px">Portfolio</h2>
+      <div class="portfolio">
+        <div class="item" style="background-image:linear-gradient(180deg,rgba(0,0,0,0.15),rgba(0,0,0,0.2)), url('data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'800\' height=\'400\'><rect width=\'100%\' height=\'100%\' fill=\'%23ff9a9e\'/><text x=\'20\' y=\'40\' font-size=\'30\' fill=\'white\'>Men Haqimda</text></svg>')"><span>Men Ashirboyev Xursand 2012-yil 22-yanvarda Xorazm viloyati Yangibozor tumnida tugilganman 1</span></div>
+        <div class="item" style="background-image:linear-gradient(180deg,rgba(0,0,0,0.15),rgba(0,0,0,0.2)), url('data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'800\' height=\'400\'><rect width=\'100%\' height=\'100%\' fill=\'%23f6d365\'/><text x=\'20\' y=\'40\' font-size=\'30\' fill=\'white\'>Yashash manzilim</text></svg>')"><span>Xorzam viloyati Yangibozor tumani Bozqala shaharchasi </span></div>
+        <div class="item" style="background-image:linear-gradient(180deg,rgba(0,0,0,0.15),rgba(0,0,0,0.2)), url('data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'800\' height=\'400\'><rect width=\'100%\' height=\'100%\' fill=\'%237ee7c6\'/><text x=\'20\' y=\'40\' font-size=\'30\' fill=\'white\'>Tajribalarim</text></svg>')"><span>1 Yil IT parkdagi hamda 1 oy maktabdagi tajribalarim bor </span></div>
+        <div class="item" style="background-image:linear-gradient(180deg,rgba(0,0,0,0.15),rgba(0,0,0,0.2)), url('data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'800\' height=\'400\'><rect width=\'100%\' height=\'100%\' fill=\'%23a18cd1\'/><text x=\'20\' y=\'40\' font-size=\'30\' fill=\'white\'>Xizmatlarim</text></svg>')"><span>Men kop ish qila olaman lekin qilib bermayman:)</span></div>
+        <div class="item" style="background-image:linear-gradient(180deg,rgba(0,0,0,0.15),rgba(0,0,0,0.2)), url('data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'800\' height=\'400\'><rect width=\'100%\' height=\'100%\' fill=\'%23fbc2eb\'/><text x=\'20\' y=\'40\' font-size=\'30\' fill=\'white\'>Hobbiylarim</text></svg>')"><span>Mening hobbiyim bu eFOOTBALL va shunga oxshash oyinlar </span></div>
+        <div class="item" style="background-image:linear-gradient(180deg,rgba(0,0,0,0.15),rgba(0,0,0,0.2)), url('data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'800\' height=\'400\'><rect width=\'100%\' height=\'100%\' fill=\'%23ffd1ff\'/><text x=\'20\' y=\'40\' font-size=\'30\' fill=\'white\'>Dostlarim</text></svg>')"><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic quae voluptatum, perferendis cumque ipsam soluta repudiandae, quod quos perspiciatis, voluptatem tenetur nihil aut reprehenderit blanditiis inventore assumenda sequi maiores! Neque.</span></div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2 style="margin-bottom:12px">Aloqa</h2>
+      <div class="contact-row">
+        <form onsubmit="event.preventDefault();sendForm()" class="card">
+          <input id="name" placeholder="Ismingiz" required />
+          <input id="email" type="email" placeholder="Email" required />
+          <textarea id="message" rows="5" placeholder="Qisqacha so'rov yoki xabar"></textarea>
+          <div style="display:flex;gap:12px;align-items:center">
+            <button class="btn btn-primary" type="submit">Xabar yuborish</button>
+            <div style="color:rgba(8,32,50,0.6)">Yoki: <strong>+998 50 003 76 22</strong></div>
+          </div>
+        </form>
+        <div class="contact-info card">
+          <h3>Biz bilan bog'laning</h3>
+          <p>Tez orada javob beramiz. Loyihangiz hajmi va muddatini yozing</p>
+          <hr style="border:none;border-top:1px solid rgba(8,32,50,0.06)">
+          <p style="font-size:14px;margin:8px 0">Manzil: Xorazm, O'zbekiston</p>
+          <p style="font-size:14px;margin:8px 0">Ish vaqti: Dushanba - Shanba, 09:00 - 18:00</p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div>© 2025 Yorqin Sayt — Barcha huquqlar himoyalangan</div>
+    </footer>
+  </div>
+
+  <script>
+    function sendForm(){
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const message = document.getElementById('message').value.trim();
+      if(!name || !email){alert('Iltimos, ismingiz va emailni kiriting.');return}
+      // Bu demo — haqiqiy serverga yuborish uchun fetch qo'shing
+      alert('Rahmat, '+name+"! Xabaringiz qabul qilindi.\n("
+        + (message?('Xabar: '+message):'') +")");
+      document.getElementById('name').value='';
+      document.getElementById('email').value='';
+      document.getElementById('message').value='';
+    }
+  </script>
+</body>
+</html>
