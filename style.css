@@ -28,12 +28,12 @@ header{
 }
 
 header.sticky{
-    background-color: #3a6cf4;
+    background-color: #ffffff;
     padding: 10px 200px;
 }
 
 header .brand{
-    color: white;
+    color: rgb(84, 50, 180);
     font-size: 1.8em;
     font-weight: 700;
     text-transform: uppercase;
@@ -45,7 +45,7 @@ header .navigation{
 }
 
 header .navigation a{
-    color: white;
+    color: #3a6cf4;
     font-size: 1em;
     text-decoration: none;
     font-weight: 500;
@@ -53,7 +53,7 @@ header .navigation a{
 }
 
 header .navigation a:hover{
-    color: #3a6cf4;
+    color: #5ad642;
 }
 
 header .sticky .navigation a:hover{
@@ -162,7 +162,6 @@ section{
 }
 
 
-/* About */
 
 .title{
     width: 100%;
@@ -713,4 +712,7 @@ section{
     pointer-events: none;
     opacity: 0;
     transition: all 0.3s ease;
+  }
+  .men {
+    color: #3a6cf4;
   }
